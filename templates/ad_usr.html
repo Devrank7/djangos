@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+</head>
+<body>
+<h1>
+    Admin panel
+</h1>
+{% for el in usr %}
+    <h4><I>
+        name = {{ el.username }}
+    </I></h4>
+    <h4><I>
+        email = {{ el.email }}
+    </I></h4>
+    <h4><I>
+        first_name = {{ el.first_name }}
+    </I></h4>
+    <h4><I>
+        last_name = {{ el.last_name }}
+    </I></h4>
+    <br>
+    <a href="/user/admin/edit/{{ el.id }}">
+        Edit user by id = {{ el.id }}
+    </a>
+{% endfor %}
+</body>
+</html>

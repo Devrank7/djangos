@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+<h1>
+    Your profile
+</h1>
+<br>
+<br>
+<hr>
+<h3>name = {{ usr.username }}</h3>
+<h3>email = {{ usr.email }}</h3>
+<h3>first_name = {{ usr.first_name }}</h3>
+<h3>last_name = {{ usr.last_name }}</h3>
+<h3>balance = {{ usr.balance }}</h3>
+<h3>role = {{ role }}</h3>
+{% if usr.photo %}
+    <img src="{{ usr.photo.url }}" alt="Image">
+{% endif %}
+<hr>
+<h1>
+    Your course
+</h1>
+<hr>
+{% for el in usr.buy_user.all %}
+    <h3>name = {{ el.name }}</h3>
+    <h3>description = {{ el.description }}</h3>
+    <h3>creator = {{ el.creator }}</h3>
+    <h3>price = {{ el.price }}</h3>
+    <img src="{{ el.image.url }}">
+{% endfor %}
+<h1>
+    Update your profile
+</h1>
+<a href="/user/update/">
+    Update
+</a>
+<h1>
+    Update password
+</h1>
+<a href="/login/change/password">
+    Password update
+</a>
+<hr>
+<h3><i>
+    Get a group
+</i></h3>
+<a href="/user/role/">
+    Get
+</a>
+{% if is_admin %}
+    <h3><i>
+        Admin panel
+    </i></h3>
+    <a href="/user/admin/">
+        Admin panel
+    </a>
+{% endif %}
+</body>
+</html>

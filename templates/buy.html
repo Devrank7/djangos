@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>
+    Buy
+</h1>
+<form method="post">
+    {% csrf_token %}
+    <input type="checkbox" name="ch">
+    <br><br>
+    <button type="submit">
+        Buy
+    </button>
+</form>
+</body>
+</html>

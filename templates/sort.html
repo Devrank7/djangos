@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>
+    All sort course
+</h1>
+{% for el in cor %}
+    <hr>
+    <h3><a href="/course/{{ el.id }}">id = {{ el.id }}</a></h3>
+    <h3>name = {{ el.name }}</h3>
+    <h3>description = {{ el.description }}</h3>
+    <h3>creator = {{ el.creator }}</h3>
+    <img src="{{ el.image.url }}">
+{% endfor %}
+</body>
+</html>

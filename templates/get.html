@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get</title>
+</head>
+<body>
+<h1>
+    Get course
+</h1>
+<h3>name = {{ course.name }}</h3>
+<h3>description = {{ course.description }}</h3>
+<h3>creator = {{ course.creator }}</h3>
+<h3>price = {{ course.price }}</h3>
+<img src="{{ course.image.url }}">
+<hr>
+<hr>
+{% for el in course.comments.all %}
+    <h3>text = {{ el.text }}</h3>
+    <a href="/course/edit/comment/{{ el.pk }}">Update</a>
+    <a href="/course/comment/delete/{{ el.pk }}">Delete</a>
+    <hr>
+{% endfor %}
+<a href="/course/add/comment/{{ course.pk }}">Add a comment</a>
+<hr>
+<h2>
+    Buy the course
+</h2>
+<hr>
+<a href="/course/buy/{{ course.pk }}">
+    Course buy
+</a>
+</body>
+</html>
